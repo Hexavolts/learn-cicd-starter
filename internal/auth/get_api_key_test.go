@@ -6,10 +6,10 @@ import (
 )
 
 func TestGetAPIKey(t *testing.T) {
-	h := http.Header{}
-	h.Set("Authorization", "ApiKey 1234567")
+	header := http.Header{}
+	header.Set("Authorization", "ApiKey 1234567")
 
-	got, err := GetAPIKey(h)
+	got, err := GetAPIKey(header)
 	if err != nil {
 		t.Fatalf("expected: %v, got: %v", "1234567", err)
 	}
